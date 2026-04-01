@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-glass-light: rgba(255, 255, 255, 0.7);
+  --color-glass-dark: rgba(30, 41, 59, 0.7);
+  --color-glass-border-light: rgba(255, 255, 255, 0.5);
+  --color-glass-border-dark: rgba(255, 255, 255, 0.1);
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-white/50 dark:border-white/10 shadow-xl;
+  }
+  .glass-card {
+    @apply bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-white/60 dark:border-white/5 shadow-lg rounded-2xl transition-all duration-300;
+  }
+  .glass-button {
+    @apply bg-blue-600/90 hover:bg-blue-700/90 text-white backdrop-blur-sm shadow-md transition-all duration-300;
+  }
+}
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.15), transparent 25%),
+              radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15), transparent 25%);
+  z-index: -1;
+  pointer-events: none;
+}
