@@ -9,12 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.2.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
     "lucide-react": "^0.474.0",
+    "next": "^15.2.6",
     "pdf-lib": "^1.17.1",
-    "pdfjs-dist": "^4.0.379"
+    "pdfjs-dist": "^4.0.379",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
